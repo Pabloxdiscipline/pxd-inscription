@@ -69,25 +69,76 @@
   </section>
 
   <section class="signup" id="signup-form">
-    <div class="form-shell">
-      <iframe width="540" height="305" src="https://3808fd4b.sibforms.com/v2/serve/MUIFAK6epuZBWN1frsaFUboQBxWqYcZjF5A6XkQHzOuAusLto2PhjPz3Ujnl0DpYliud0yIF8b3rZKksNhLH6L6x_sQ0hQ9YG3DKZpr-HzU0b7tIikEcWv3LjaVVIp32_9Y8FXKw3WNDMpdJjqlpUwC8iFmFlrf_TPkTNjoTg9SkaeMJkw6JtonQIGKbr3K_LjHeNMSbgqsDlixXRg==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
-    </div>
-    <p class="privacy-note">Aucun spam. Tes données restent privées, désinscription en un clic.</p>
+    <form id="sib-form" class="brevo-form" method="POST" action="https://3808fd4b.sibforms.com/serve/MUIFAK6epuZBWN1frsaFUboQBxWqYcZjF5A6XkQHzOuAusLto2PhjPz3Ujnl0DpYliud0yIF8b3rZKksNhLH6L6x_sQ0hQ9YG3DKZpr-HzU0b7tIikEcWv3LjaVVIp32_9Y8FXKw3WNDMpdJjqlpUwC8iFmFlrf_TPkTNjoTg9SkaeMJkw6JtonQIGKbr3K_LjHeNMSbgqsDlixXRg==" data-type="subscription">
+      <div class="sib-input sib-form-block">
+        <div class="form__entry entry_block">
+          <div class="form__label-row">
+            <div class="entry__field">
+              <input class="input brevo-email" type="text" id="EMAIL" name="EMAIL" autocomplete="email" value="" placeholder="Ton email" data-required="true" required>
+            </div>
+          </div>
+          <label class="entry__error entry__error--primary"></label>
+        </div>
+      </div>
+
+      <div class="sib-form-block">
+        <button class="cta-button sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+          Je veux mon protocole
+        </button>
+      </div>
+
+      <div class="sib-optin sib-form-block" data-required="true">
+        <div class="form__entry entry_mcq">
+          <div class="form__label-row">
+            <div class="entry__choice">
+              <label class="brevo-optin-label">
+                <input type="checkbox" class="input_replaced brevo-checkbox" value="1" id="OPT_IN" name="OPT_IN" required>
+                <span class="brevo-optin-text">
+                  J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité et mentions légales.
+                  <span class="brevo-optin-sub">Désinscription possible à tout moment via le lien présent dans nos emails.</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <label class="entry__error entry__error--primary"></label>
+        </div>
+      </div>
+
+      <input type="text" name="email_address_check" value="" class="input--hidden">
+      <input type="hidden" name="locale" value="fr">
+    </form>
   </section>
 
   <figure class="hero-photo-wrap">
     <img class="hero-photo" src="assets/hero.jpg" alt="PXD Elite — transformation physique" width="240" height="300" loading="lazy">
   </figure>
 
-  <div class="cta-wrap">
-    <a class="cta-button" href="#signup-form">Je veux mon protocole gratuit</a>
-  </div>
-
   <footer class="footer">
     <p>PXD ELITE · Coaching en ligne</p>
   </footer>
 
 </main>
+
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
+  window.LOCALE = 'fr';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides. Veuillez vérifier le format du champ et réessayer.";
+  window.REQUIRED_ERROR_MESSAGE = "Vous devez renseigner ce champ. ";
+  window.GENERIC_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides. Veuillez vérifier le format du champ et réessayer.";
+  window.INVALID_NUMBER = "Les informations que vous avez fournies ne sont pas valides. Veuillez vérifier le format du champ et réessayer.";
+  window.INVALID_DATE = "Veuillez saisir une date valide";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Veuillez choisir au moins une option';
+  window.translation = {
+    common: {
+      selectedList: '{quantity} liste sélectionnée',
+      selectedLists: '{quantity} listes sélectionnées',
+      selectedOption: '{quantity} sélectionné',
+      selectedOptions: '{quantity} sélectionnés',
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
 </html>
