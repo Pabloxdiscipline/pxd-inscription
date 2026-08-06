@@ -69,44 +69,61 @@
   </section>
 
   <section class="signup" id="signup-form">
-    <form id="sib-form" class="brevo-form" method="POST" action="https://3808fd4b.sibforms.com/serve/MUIFAK6epuZBWN1frsaFUboQBxWqYcZjF5A6XkQHzOuAusLto2PhjPz3Ujnl0DpYliud0yIF8b3rZKksNhLH6L6x_sQ0hQ9YG3DKZpr-HzU0b7tIikEcWv3LjaVVIp32_9Y8FXKw3WNDMpdJjqlpUwC8iFmFlrf_TPkTNjoTg9SkaeMJkw6JtonQIGKbr3K_LjHeNMSbgqsDlixXRg==" data-type="subscription">
-      <div class="sib-input sib-form-block">
-        <div class="form__entry entry_block">
-          <div class="form__label-row">
-            <div class="entry__field">
-              <input class="input brevo-email" type="text" id="EMAIL" name="EMAIL" autocomplete="email" value="" placeholder="Ton email" data-required="true" required>
-            </div>
+    <div class="sib-form">
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="error-message" class="sib-form-message-panel brevo-message brevo-message--error">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <span class="sib-form-message-panel__inner-text">Nous n'avons pas pu confirmer votre inscription.</span>
           </div>
-          <label class="entry__error entry__error--primary"></label>
+        </div>
+        <div id="success-message" class="sib-form-message-panel brevo-message brevo-message--success">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <span class="sib-form-message-panel__inner-text">C'est fait. Direction ton protocole 🔥</span>
+          </div>
+        </div>
+        <div id="sib-container" class="sib-container--large sib-container--vertical">
+          <form id="sib-form" class="brevo-form" method="POST" action="https://3808fd4b.sibforms.com/serve/MUIFAK6epuZBWN1frsaFUboQBxWqYcZjF5A6XkQHzOuAusLto2PhjPz3Ujnl0DpYliud0yIF8b3rZKksNhLH6L6x_sQ0hQ9YG3DKZpr-HzU0b7tIikEcWv3LjaVVIp32_9Y8FXKw3WNDMpdJjqlpUwC8iFmFlrf_TPkTNjoTg9SkaeMJkw6JtonQIGKbr3K_LjHeNMSbgqsDlixXRg==" data-type="subscription">
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <div class="entry__field">
+                    <input class="input brevo-email" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="Ton email" data-required="true" required>
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+            </div>
+
+            <div class="sib-form-block">
+              <button class="cta-button sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                Je veux mon protocole
+              </button>
+            </div>
+
+            <div class="sib-optin sib-form-block" data-required="true">
+              <div class="form__entry entry_mcq">
+                <div class="form__label-row">
+                  <div class="entry__choice">
+                    <label class="brevo-optin-label">
+                      <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+                      <span class="checkbox checkbox_tick_positive"></span>
+                      <span class="brevo-optin-text">
+                        J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité et mentions légales.
+                        <span class="brevo-optin-sub">Désinscription possible à tout moment via le lien présent dans nos emails.</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+            </div>
+
+            <input type="text" name="email_address_check" value="" class="input--hidden">
+            <input type="hidden" name="locale" value="fr">
+          </form>
         </div>
       </div>
-
-      <div class="sib-form-block">
-        <button class="cta-button sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
-          Je veux mon protocole
-        </button>
-      </div>
-
-      <div class="sib-optin sib-form-block" data-required="true">
-        <div class="form__entry entry_mcq">
-          <div class="form__label-row">
-            <div class="entry__choice">
-              <label class="brevo-optin-label">
-                <input type="checkbox" class="input_replaced brevo-checkbox" value="1" id="OPT_IN" name="OPT_IN" required>
-                <span class="brevo-optin-text">
-                  J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité et mentions légales.
-                  <span class="brevo-optin-sub">Désinscription possible à tout moment via le lien présent dans nos emails.</span>
-                </span>
-              </label>
-            </div>
-          </div>
-          <label class="entry__error entry__error--primary"></label>
-        </div>
-      </div>
-
-      <input type="text" name="email_address_check" value="" class="input--hidden">
-      <input type="hidden" name="locale" value="fr">
-    </form>
+    </div>
   </section>
 
   <footer class="footer">
