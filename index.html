@@ -1,97 +1,505 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PXD ELITE — Le Protocole Sèche PXD</title>
-<meta name="description" content="6 jours pour lancer ta transformation. Reçois ton protocole nutrition gratuit : recettes, macros et liste de courses.">
+<title>Protocole Sèche — La méthode complète pour perdre du gras | PXD</title>
+<meta name="description" content="49 pages, 17 chapitres, 11 recettes et un plan de 14 jours. La méthode complète pour perdre du gras sans perdre ton muscle, ta tête, ni ta vie sociale.">
+<meta name="theme-color" content="#09090B">
+<meta property="og:title" content="Protocole Sèche by PXD">
+<meta property="og:description" content="Tu n'as pas manqué de volonté. Tu as manqué de méthode.">
+<meta property="og:type" content="product">
+<meta property="og:image" content="https://seche.pabloxdiscipline.com/img/hero.jpg">
+<link rel="canonical" href="https://seche.pabloxdiscipline.com/">
 
-<meta property="og:title" content="PXD ELITE — Le Protocole Sèche PXD">
-<meta property="og:description" content="6 jours pour lancer ta transformation. Entre ton email, tu reçois direct ton protocole nutrition.">
-<meta property="og:image" content="assets/logo.png">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#0a0a0b">
+<style>
+/* ===================================================================
+   PROTOCOLE SÈCHE — LANDING PAGE
+   ⚠️  UNE SEULE CHOSE À MODIFIER : la variable STRIPE_URL en bas de page
+   =================================================================== */
 
-<link rel="icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+@font-face{font-family:'Bebas';src:url('fonts/bebas-neue-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-300-normal.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:swap}
 
-<link rel="stylesheet" href="styles.css">
+:root{
+  --noir:#09090B; --anthra:#17191E; --anthra2:#1E2127; --line:#2A2D34;
+  --blanc:#F5F4F0; --gris:#A7ABB4; --gris2:#C8CBD2; --rouge:#FF2F38;
+  --pad:22px; --max:1080px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--noir);color:var(--gris2);font-family:'Inter',system-ui,sans-serif;
+  font-weight:300;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{padding:64px 0}
+.pill{display:inline-block;background:var(--rouge);color:#fff;font-weight:800;font-size:10px;
+  letter-spacing:.16em;text-transform:uppercase;padding:6px 13px;border-radius:100px;line-height:1}
+.pill.ghost{background:transparent;border:1px solid var(--line);color:var(--gris)}
+.rule{width:44px;height:3px;background:var(--rouge);border-radius:2px}
+
+h1,h2,h3.big{font-family:'Bebas',Impact,sans-serif;font-weight:400;text-transform:uppercase;
+  color:var(--blanc);line-height:.9;letter-spacing:.01em}
+h1{font-size:clamp(38px,10.5vw,74px)}
+h2{font-size:clamp(31px,8vw,54px)}
+.red{color:var(--rouge)}
+p{font-size:16px;line-height:1.65}
+.lede{font-size:clamp(17px,4.4vw,21px);line-height:1.45;color:var(--blanc);font-weight:300}
+.small{font-size:14px;line-height:1.55;color:var(--gris)}
+.tiny{font-size:12px;line-height:1.5;color:#8E929B}
+.kicker{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--rouge)}
+.kicker.g{color:var(--gris)}
+strong{font-weight:600;color:var(--blanc)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:0;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero .veil{position:absolute;inset:0;background:
+  linear-gradient(to bottom,rgba(9,9,11,.72) 0%,rgba(9,9,11,.30) 30%,rgba(9,9,11,.86) 72%,#09090B 100%)}
+.hero .top{position:absolute;top:0;left:0;right:0;padding:22px var(--pad) 0;z-index:2}
+.hero .inner{position:relative;z-index:2;padding:0 var(--pad) 52px}
+.hero h1{margin-top:16px}
+.hero .scroll{margin-top:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gris);font-weight:600;display:flex;align-items:center;gap:9px}
+.hero .scroll:after{content:"";width:1px;height:22px;background:var(--rouge);display:block}
+
+/* ---------- MIROIR ---------- */
+.mirror p{font-size:clamp(17px,4.6vw,22px);line-height:1.45;color:var(--blanc);font-weight:300}
+.mirror p+p{margin-top:22px}
+.mirror .last{color:var(--gris)}
+
+/* ---------- TURN ---------- */
+.turn{background:var(--anthra);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* ---------- CARTES ---------- */
+.card{background:var(--anthra);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card.flat{background:transparent}
+.grid{display:grid;gap:14px}
+@media(min-width:760px){
+  .grid.g2{grid-template-columns:1fr 1fr}
+  .grid.g3{grid-template-columns:repeat(3,1fr)}
+  .grid.g4{grid-template-columns:repeat(4,1fr)}
+  section{padding:88px 0}
+}
+
+/* ---------- SPECS ---------- */
+.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:560px){.specs{grid-template-columns:repeat(4,1fr)}}
+.spec{background:var(--anthra);border:1px solid var(--line);border-radius:11px;padding:15px 10px;text-align:center}
+.spec .v{font-family:'Bebas',sans-serif;font-size:30px;color:var(--rouge);line-height:1}
+.spec .l{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--gris);margin-top:6px}
+
+/* ---------- CAROUSEL PAGES ---------- */
+.rail{display:flex;gap:12px;overflow-x:auto;padding:4px 0 14px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);
+  padding-left:var(--pad);padding-right:var(--pad);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{flex:0 0 auto;scroll-snap-align:center}
+.rail img{width:198px;border-radius:9px;border:1px solid var(--line)}
+
+/* ---------- RECETTES ---------- */
+.recgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media(min-width:760px){.recgrid{grid-template-columns:repeat(3,1fr)}}
+.rec{position:relative;border-radius:11px;overflow:hidden;aspect-ratio:3/4;background:#000}
+.rec img{width:100%;height:100%;object-fit:cover}
+.rec .tag{position:absolute;left:9px;bottom:9px;background:rgba(9,9,11,.82);
+  backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.12);border-radius:7px;
+  padding:5px 9px;font-size:10px;font-weight:800;letter-spacing:.09em;color:#fff}
+.rec .tag b{color:var(--rouge)}
+.rec .lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(9,9,11,.62);font-family:'Bebas',sans-serif;font-size:15px;letter-spacing:.1em;
+  color:var(--blanc);text-align:center;padding:14px;line-height:1.1}
+
+/* ---------- LISTES ---------- */
+ul.pxd{list-style:none}
+ul.pxd li{position:relative;padding-left:22px;font-size:15px;line-height:1.5}
+ul.pxd li+li{margin-top:12px}
+ul.pxd li:before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;
+  background:var(--rouge);border-radius:2px}
+ul.pxd.no li:before{background:#3A3E46}
+
+/* ---------- CTA ---------- */
+.ctabox{text-align:center;padding:8px 0}
+.btn{display:block;width:100%;max-width:430px;margin:0 auto;background:var(--rouge);color:#fff;
+  text-decoration:none;border-radius:100px;padding:19px 22px;font-weight:800;font-size:15px;
+  letter-spacing:.08em;text-transform:uppercase;line-height:1.2;
+  box-shadow:0 10px 34px rgba(255,47,56,.28);transition:transform .12s ease}
+.btn:active{transform:scale(.985)}
+.btn .u{display:block;font-weight:400;font-size:12px;letter-spacing:.02em;
+  text-transform:none;margin-top:6px;opacity:.94}
+.rea{margin-top:14px;font-size:12px;color:var(--gris);letter-spacing:.02em}
+
+/* ---------- QUI ---------- */
+.who{display:grid;gap:24px}
+@media(min-width:760px){.who{grid-template-columns:0.85fr 1.15fr;align-items:center;gap:38px}}
+.who img{width:100%;border-radius:14px;border:1px solid var(--line)}
+
+/* ---------- SOMMAIRE ---------- */
+details.toc{border:1px solid var(--line);border-radius:12px;background:var(--anthra);overflow:hidden}
+details.toc summary{padding:17px 20px;cursor:pointer;list-style:none;font-weight:600;
+  color:var(--blanc);font-size:15px;display:flex;justify-content:space-between;align-items:center}
+details.toc summary::-webkit-details-marker{display:none}
+details.toc summary:after{content:"+";color:var(--rouge);font-size:20px;font-weight:400}
+details.toc[open] summary:after{content:"–"}
+.tocbody{padding:0 20px 20px}
+.tocline{display:flex;gap:13px;padding:11px 0;border-top:1px solid #202329}
+.tocline .n{font-family:'Bebas',sans-serif;color:var(--rouge);font-size:16px;min-width:22px;line-height:1.3}
+.tocline .t b{display:block;color:var(--blanc);font-size:14px;font-weight:600}
+.tocline .t span{font-size:13px;color:var(--gris)}
+
+/* ---------- PRIX ---------- */
+.price{font-family:'Bebas',sans-serif;font-size:clamp(64px,17vw,110px);color:var(--blanc);line-height:.86}
+.price small{font-size:.42em;color:var(--rouge)}
+
+/* ---------- FAQ ---------- */
+details.faq{border-bottom:1px solid var(--line)}
+details.faq summary{padding:17px 0;cursor:pointer;list-style:none;font-weight:600;
+  color:var(--blanc);font-size:15px;display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary:after{content:"+";color:var(--rouge);font-size:19px;font-weight:400;flex:0 0 auto}
+details.faq[open] summary:after{content:"–"}
+details.faq .a{padding:0 0 18px;font-size:14.5px;color:var(--gris2);line-height:1.6}
+
+/* ---------- FINAL ---------- */
+.final{position:relative;overflow:hidden;padding:0}
+.final img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.final .veil{position:absolute;inset:0;background:linear-gradient(to bottom,#09090B 0%,rgba(9,9,11,.72) 34%,rgba(9,9,11,.93) 100%)}
+.final .inner{position:relative;z-index:2;padding:82px var(--pad) 74px;text-align:center}
+
+footer{border-top:1px solid var(--line);padding:30px 0 44px;text-align:center}
+footer a{color:var(--gris);text-decoration:none;font-size:12px}
+
+/* ---------- BARRE STICKY MOBILE ---------- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:11px 14px calc(11px + env(safe-area-inset-bottom));
+  background:rgba(9,9,11,.93);backdrop-filter:blur(14px);border-top:1px solid var(--line);
+  display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .28s ease}
+.sticky.on{transform:translateY(0)}
+.sticky .lab{flex:1;min-width:0}
+.sticky .lab b{display:block;color:var(--blanc);font-size:13px;font-weight:600;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky .lab span{font-size:11px;color:var(--gris)}
+.sticky a{background:var(--rouge);color:#fff;text-decoration:none;border-radius:100px;
+  padding:13px 20px;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;flex:0 0 auto}
+@media(min-width:900px){.sticky{display:none}}
+@media(max-width:899px){body{padding-bottom:78px}}
+</style>
 </head>
 <body>
 
-<div class="glow-field" aria-hidden="true"></div>
+<!-- ==================== 1 · ACCROCHE ==================== -->
+<header class="hero">
+  <img class="bg" src="img/hero.jpg" width="1068" height="1600" alt="">
+  <div class="veil"></div>
+  <div class="top"><span class="pill">PabloXDiscipline</span></div>
+  <div class="inner">
+    <div class="rule"></div>
+    <h1>Tu t'entraînes<br>depuis des mois.<br>Tu fais attention.<br><span class="red">Et rien n'a bougé.</span></h1>
+    <p class="lede" style="margin-top:20px;max-width:30ch">Ce n'est pas ta faute.</p>
+    <div class="scroll">Fais défiler</div>
+  </div>
+</header>
 
-<main class="page">
+<!-- ==================== 2 · LE MIROIR ==================== -->
+<section class="mirror">
+  <div class="wrap" style="max-width:660px">
+    <span class="kicker">Ça te parle&nbsp;?</span>
+    <div style="margin-top:26px">
+      <p>Tu as testé le régime trop agressif. Celui qui tenait quatre jours avant de te faire vider un placard le cinquième soir.</p>
+      <p>Tu as lu tout et son contraire. Les glucides le soir. Le cardio à jeun. Le jeûne. L'aliment miracle du moment.</p>
+      <p>Tu as vu la balance monter un lundi matin alors que ta semaine avait été irréprochable.</p>
+      <p>Tu as regardé un week-end effacer cinq jours de sérieux.</p>
+      <p class="last">Et tu as fini par te dire que c'était toi, le problème.</p>
+    </div>
+  </div>
+</section>
 
-  <header class="brand">
-    <img class="brand__logo" src="assets/logo.png" alt="PXD" width="240" height="240">
-    <p class="brand__word"><span class="accent">PXD</span> ELITE</p>
-  </header>
+<!-- ==================== 3 · LE RETOURNEMENT ==================== -->
+<section class="turn">
+  <div class="wrap" style="max-width:760px">
+    <h2>Tu n'as pas manqué de volonté.<br><span class="red">Tu as manqué de méthode.</span></h2>
+    <p style="margin-top:22px;max-width:56ch">Sécher n'est pas une question de courage. C'est une question de
+    mécanique : une entrée, une sortie, une mesure, un ajustement. <strong>Le reste est du bruit</strong> — et
+    ce guide est là pour l'éteindre.</p>
+  </div>
+</section>
 
-  <section class="hero-copy">
-    <span class="pill">🔥 PLAN GRATUIT</span>
+<!-- ==================== 4 · CE QUE C'EST ==================== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Le guide</span>
+    <h2 style="margin-top:14px">Protocole<br><span class="red">Sèche</span></h2>
+    <p class="lede" style="margin-top:18px;max-width:34ch">La méthode complète pour perdre du gras sans perdre
+    ton muscle, ta tête, ni ta vie sociale.</p>
 
-    <h1 class="headline">
-      LE PROTOCOLE<br>
-      SÈCHE <span class="accent">PXD</span>
-    </h1>
+    <div class="specs" style="margin-top:30px">
+      <div class="spec"><div class="v">49</div><div class="l">Pages</div></div>
+      <div class="spec"><div class="v">17</div><div class="l">Chapitres</div></div>
+      <div class="spec"><div class="v">11</div><div class="l">Recettes</div></div>
+      <div class="spec"><div class="v">14</div><div class="l">Jours de plan</div></div>
+    </div>
 
-    <p class="subtitle">
-      6 jours pour lancer ta transformation.
-      <strong>Entre ton email, tu reçois direct ton protocole nutrition.</strong>
-    </p>
-  </section>
+    <p class="small" style="margin-top:28px">Des pages réelles du guide, pas une maquette&nbsp;:</p>
+    <div class="rail" style="margin-top:12px">
+      <img src="img/pg1.jpg" width="620" height="875" alt="Page : de quoi est fait ton poids" loading="lazy">
+      <img src="img/pg3.jpg" width="620" height="875" alt="Page recette" loading="lazy">
+      <img src="img/pg2.jpg" width="620" height="875" alt="Page : les trois cardios" loading="lazy">
+      <img src="img/pg4.jpg" width="620" height="875" alt="Page : sécher en 30 jours" loading="lazy">
+    </div>
 
-  <section class="expect-card" aria-labelledby="expect-title">
-    <h2 id="expect-title" class="expect-card__title">Ce qui t'attend</h2>
-    <ul class="expect-list">
-      <li class="expect-item">
-        <span class="expect-item__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5L9.5 17L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        <span class="expect-item__text">11 recettes prêtes à suivre <span class="dim">(3 petits-déj, 3 déjeuners, 3 dîners, 2 snacks)</span></span>
-      </li>
-      <li class="expect-item">
-        <span class="expect-item__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5L9.5 17L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        <span class="expect-item__text">Macros calculées, zéro prise de tête</span>
-      </li>
-      <li class="expect-item">
-        <span class="expect-item__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5L9.5 17L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        <span class="expect-item__text">Liste de courses complète, un seul passage au supermarché</span>
-      </li>
-    </ul>
-  </section>
+    <div class="ctabox" style="margin-top:26px">
+      <a class="btn" href="#acheter" data-buy>Je veux la méthode — 27 €<span class="u">PDF · accès immédiat par mail</span></a>
+      <div class="rea">Paiement sécurisé · Livraison en moins d'une minute</div>
+    </div>
+  </div>
+</section>
 
-  <section class="signup" id="signup-form">
-    <form id="sib-form" class="brevo-form" method="POST" action="https://3808fd4b.sibforms.com/serve/MUIFAK6epuZBWN1frsaFUboQBxWqYcZjF5A6XkQHzOuAusLto2PhjPz3Ujnl0DpYliud0yIF8b3rZKksNhLH6L6x_sQ0hQ9YG3DKZpr-HzU0b7tIikEcWv3LjaVVIp32_9Y8FXKw3WNDMpdJjqlpUwC8iFmFlrf_TPkTNjoTg9SkaeMJkw6JtonQIGKbr3K_LjHeNMSbgqsDlixXRg==" data-type="subscription">
-      <input class="input brevo-email" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="Ton email" required>
+<!-- ==================== 5 · LES RECETTES ==================== -->
+<section style="background:var(--anthra);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="kicker">Chapitre 15</span>
+    <h2 style="margin-top:14px">11 recettes<br><span class="red">que je fais vraiment</span></h2>
+    <p style="margin-top:18px;max-width:52ch">Beaucoup de protéines, beaucoup de volume, très peu d'ingrédients.
+    Rien qui prenne quarante minutes un soir de semaine. <strong>Chaque recette avec ses macros, ses quantités
+    et sa préparation.</strong></p>
 
-      <label class="brevo-optin-label">
-        <input type="checkbox" class="brevo-checkbox" value="1" id="OPT_IN" name="OPT_IN" required>
-        <span class="brevo-optin-text">
-          J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité et mentions légales.
-          <span class="brevo-optin-sub">Désinscription possible à tout moment via le lien présent dans nos emails.</span>
-        </span>
-      </label>
+    <div class="recgrid" style="margin-top:26px">
+      <div class="rec"><img src="img/r1.jpg" width="675" height="900" alt="" loading="lazy"><div class="tag"><b>700</b> KCAL · 55 P</div></div>
+      <div class="rec"><img src="img/r2.jpg" width="675" height="900" alt="" loading="lazy"><div class="tag"><b>600</b> KCAL · 50 P</div></div>
+      <div class="rec"><img src="img/r6.jpg" width="675" height="900" alt="" loading="lazy"><div class="tag"><b>500</b> KCAL · 58 P</div></div>
+      <div class="rec"><img src="img/r3.jpg" width="675" height="900" alt="" loading="lazy"><div class="tag"><b>600</b> KCAL · 45 P</div></div>
+      <div class="rec"><img src="img/r4.jpg" width="675" height="900" alt="" loading="lazy"><div class="tag"><b>350</b> KCAL · 43 P</div></div>
+      <div class="rec"><img src="img/r5.jpg" width="675" height="900" alt="" loading="lazy">
+        <div class="lock">+ 6 AUTRES<br>DANS LE GUIDE</div></div>
+    </div>
+    <p class="tiny" style="margin-top:14px">Petits-déjeuners, plats, desserts — et un plan de 6 jours qui les
+    combine, avec le total calorique et protéique de chaque journée.</p>
+  </div>
+</section>
 
-      <button class="cta-button" type="submit">Je veux mon protocole</button>
+<!-- ==================== 6 · CE QUE TU SAURAS FAIRE ==================== -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Dans 14 jours</span>
+    <h2 style="margin-top:14px">Ce que tu<br><span class="red">sauras faire</span></h2>
+    <div class="grid g2" style="margin-top:26px">
+      <div class="card">
+        <span class="kicker">01</span>
+        <h3 class="big" style="font-size:24px;margin-top:8px">Ton chiffre</h3>
+        <p class="small" style="margin-top:9px">Tu sauras exactement combien tu dois manger, et pourquoi ce
+        chiffre-là. Calculé en deux minutes, corrigé par tes résultats.</p>
+      </div>
+      <div class="card">
+        <span class="kicker">02</span>
+        <h3 class="big" style="font-size:24px;margin-top:8px">Lire ta balance</h3>
+        <p class="small" style="margin-top:9px">Tu ne paniqueras plus un lundi matin. Tu sauras faire la
+        différence entre 900 g d'eau et 900 g de gras.</p>
+      </div>
+      <div class="card">
+        <span class="kicker">03</span>
+        <h3 class="big" style="font-size:24px;margin-top:8px">Manger dehors</h3>
+        <p class="small" style="margin-top:9px">Restaurant, apéro, week-end, voyages. Sans dérailler, et surtout
+        sans t'isoler de tout le monde pendant trois mois.</p>
+      </div>
+      <div class="card">
+        <span class="kicker">04</span>
+        <h3 class="big" style="font-size:24px;margin-top:8px">Quoi ajuster</h3>
+        <p class="small" style="margin-top:9px">Et surtout : quand ne rien changer du tout. C'est ce qui fait
+        abandonner la plupart des gens au moment exact où ça commençait à marcher.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <input type="text" name="email_address_check" value="" class="input--hidden">
-      <input type="hidden" name="locale" value="fr">
-    </form>
-  </section>
+<!-- ==================== 7 · POUR QUI ==================== -->
+<section style="background:var(--anthra);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2>C'est pour qui<span class="red">, exactement</span></h2>
+    <div class="grid g2" style="margin-top:26px">
+      <div class="card flat" style="border-color:rgba(255,47,56,.34)">
+        <span class="kicker">C'est pour toi si</span>
+        <ul class="pxd" style="margin-top:14px">
+          <li>Tu t'entraînes déjà, au moins deux fois par semaine.</li>
+          <li>Tu as déjà essayé de sécher, et ça n'a pas tenu.</li>
+          <li>Tu veux <strong>comprendre</strong>, pas suivre un menu à la lettre.</li>
+          <li>Tu as trois mois devant toi, pas trois semaines.</li>
+        </ul>
+      </div>
+      <div class="card flat">
+        <span class="kicker g">Ce n'est pas pour toi si</span>
+        <ul class="pxd no" style="margin-top:14px">
+          <li>Tu cherches à perdre 15 kg en un mois.</li>
+          <li>Tu veux qu'on te dise quoi manger sans jamais comprendre pourquoi.</li>
+          <li>Tu ne veux ni peser, ni noter, ni mesurer quoi que ce soit.</li>
+          <li>Tu attends un complément qui fera le travail à ta place.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer class="footer">
-    <p>PXD ELITE · Coaching en ligne</p>
-  </footer>
+<!-- ==================== 8 · QUI JE SUIS ==================== -->
+<section>
+  <div class="wrap">
+    <div class="who">
+      <img src="img/pablo.jpg" width="657" height="1000" alt="Pablo — Protocole Sèche" fetchpriority="high">
+      <div>
+        <span class="kicker">Qui écrit ça</span>
+        <h2 style="margin-top:14px">Dix ans<br><span class="red">sans interruption</span></h2>
+        <p style="margin-top:18px">Je m'appelle Pablo, j'ai 28 ans. Dix ans d'entraînement sans
+        interruption, sans jamais avoir arrêté.</p>
+        <p style="margin-top:14px">Pendant des années, j'ai cru que sécher, c'était couper. Couper les glucides,
+        sauter le petit-déjeuner, enchaîner le cardio à jeun. Je m'entraînais comme un athlète et je mangeais au
+        feeling. Le résultat était toujours le même : <strong>je perdais du poids, jamais vraiment du gras, et
+        je reprenais tout.</strong></p>
+        <p style="margin-top:14px">Ce qui a tout changé, ce n'est ni un aliment ni un complément.
+        <strong>C'est d'avoir arrêté de deviner.</strong></p>
+        <p class="lede" style="margin-top:20px">Ce guide, c'est ce que j'aurais voulu qu'on me donne il y a dix ans.</p>
+      </div>
+    </div>
+    <div class="ctabox" style="margin-top:38px">
+      <a class="btn" href="#acheter" data-buy>Je commence — 27 €<span class="u">Paiement unique · accès à vie</span></a>
+    </div>
+  </div>
+</section>
 
-</main>
+<!-- ==================== 9 · LE SOMMAIRE ==================== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <details class="toc">
+      <summary>Voir les 17 chapitres en détail</summary>
+      <div class="tocbody">
+        <div class="tocline"><div class="n">01</div><div class="t"><b>Comprendre la sèche</b><span>Ce qui se passe vraiment quand la balance bouge.</span></div></div>
+        <div class="tocline"><div class="n">02</div><div class="t"><b>Déficit &amp; calories</b><span>Calcule ton chiffre de départ en 2 minutes.</span></div></div>
+        <div class="tocline"><div class="n">03</div><div class="t"><b>À quelle vitesse perdre</b><span>Le chiffre que personne ne te donne jamais.</span></div></div>
+        <div class="tocline"><div class="n">04</div><div class="t"><b>Protéines, glucides, lipides</b><span>Combien exactement, et pourquoi.</span></div></div>
+        <div class="tocline"><div class="n">05</div><div class="t"><b>Construire ton assiette</b><span>Manger juste sans rien peser.</span></div></div>
+        <div class="tocline"><div class="n">06</div><div class="t"><b>Mesurer tes progrès</b><span>Pourquoi ta pesée du samedi te ment.</span></div></div>
+        <div class="tocline"><div class="n">07</div><div class="t"><b>Pourquoi tu ne perds pas</b><span>Les calories fantômes que tu ne comptes pas.</span></div></div>
+        <div class="tocline"><div class="n">08</div><div class="t"><b>Pourquoi tu craques</b><span>Faim, sucre, sommeil — et le plan d'urgence.</span></div></div>
+        <div class="tocline"><div class="n">09</div><div class="t"><b>Vraie vie</b><span>Resto, apéro, voyages, imprévus.</span></div></div>
+        <div class="tocline"><div class="n">10</div><div class="t"><b>Bouger plus</b><span>10 000 pas et les 3 cardios que j'utilise.</span></div></div>
+        <div class="tocline"><div class="n">11</div><div class="t"><b>Protéger ta masse musculaire</b><span>Les quatre leviers qui font la différence.</span></div></div>
+        <div class="tocline"><div class="n">12</div><div class="t"><b>Mes compléments</b><span>Leur utilité réelle et ce que j'utilise.</span></div></div>
+        <div class="tocline"><div class="n">13</div><div class="t"><b>Ton poids ne descend plus</b><span>La checklist avant de paniquer.</span></div></div>
+        <div class="tocline"><div class="n">14</div><div class="t"><b>Sortir de sèche</b><span>L'étape que tout le monde rate.</span></div></div>
+        <div class="tocline"><div class="n">15</div><div class="t"><b>Les recettes PXD</b><span>11 repas simples, spécial sèche, avec leurs macros.</span></div></div>
+        <div class="tocline"><div class="n">16</div><div class="t"><b>Si je devais sécher en 30 jours</b><span>Ce que je ferais, exactement, dans l'ordre.</span></div></div>
+        <div class="tocline"><div class="n">17</div><div class="t"><b>Tes 14 premiers jours</b><span>Ton plan d'action, à partir de ce soir.</span></div></div>
+      </div>
+    </details>
+  </div>
+</section>
 
+<!-- ==================== 10 · PRIX ==================== -->
+<section id="acheter" style="background:var(--anthra);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap" style="text-align:center">
+    <span class="kicker">Le prix</span>
+    <div class="price" style="margin-top:12px">27<small>&nbsp;€</small></div>
+    <p class="lede" style="margin-top:8px">Paiement unique. Accès immédiat. À vie.</p>
+    <div style="max-width:430px;margin:26px auto 0;text-align:left">
+      <ul class="pxd">
+        <li>C'est le prix d'un mois de salle que tu n'utilises pas.</li>
+        <li>C'est moins qu'un seul rendez-vous avec un professionnel.</li>
+        <li>C'est une fois, contre trois mois de tâtonnement en moins.</li>
+      </ul>
+    </div>
+    <div class="ctabox" style="margin-top:30px">
+      <a class="btn" href="#acheter" data-buy>Obtenir le guide — 27 €<span class="u">PDF de 49 pages, par mail, dans la minute</span></a>
+      <div class="rea">Paiement sécurisé par Stripe · CB, Apple&nbsp;Pay, Google&nbsp;Pay</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 11 · FAQ ==================== -->
+<section>
+  <div class="wrap" style="max-width:720px">
+    <h2>Les questions<br><span class="red">qu'on me pose</span></h2>
+    <div style="margin-top:24px">
+      <details class="faq"><summary>Je suis débutant, c'est trop technique ?</summary>
+        <div class="a">Non. Tout est expliqué depuis zéro, sans jargon. Si tu sais faire une multiplication,
+        tu sais calculer ton chiffre. Le chapitre 02 déroule même un exemple complet avec un cas concret.</div></details>
+      <details class="faq"><summary>Il faut peser tous mes aliments ?</summary>
+        <div class="a">Deux semaines, le temps de calibrer ton œil. Ensuite, le chapitre 05 t'apprend à construire
+        une assiette correcte sans balance — c'est justement l'objectif final de la méthode.</div></details>
+      <details class="faq"><summary>Je n'ai pas de salle de sport.</summary>
+        <div class="a">Le guide est à 80 % nutritionnel. La partie mouvement repose d'abord sur la marche
+        quotidienne, qui ne demande aucun matériel. Les séances proposées s'adaptent au poids de corps.</div></details>
+      <details class="faq"><summary>Je reçois quoi, et quand ?</summary>
+        <div class="a">Un PDF de 49 pages, envoyé par mail dans la minute qui suit ton paiement. Tu le gardes
+        à vie, sur tous tes appareils. Pas d'abonnement, pas de plateforme à rejoindre.</div></details>
+      <details class="faq"><summary>Et si ça ne me convient pas ?</summary>
+        <div class="a">C'est un produit numérique livré immédiatement : en validant ta commande, tu acceptes
+        l'exécution immédiate et tu renonces de ce fait à ton droit de rétractation. C'est précisément pour ça
+        que le bloc « c'est pour qui » est plus haut sur cette page — lis-le avant d'acheter.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 12 · CLÔTURE ==================== -->
+<section class="final">
+  <img class="bg" src="img/final.jpg" width="935" height="1400" alt="" loading="lazy">
+  <div class="veil"></div>
+  <div class="inner">
+    <h2>Dans quatorze jours,<br><span class="red">tu ne devineras plus.</span></h2>
+    <div class="ctabox" style="margin-top:30px">
+      <a class="btn" href="#acheter" data-buy>Je commence ce soir — 27 €</a>
+      <div class="rea">Accès immédiat · Paiement sécurisé</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="tiny" style="max-width:60ch;margin:0 auto 16px">Ce guide partage une expérience personnelle et des
+    informations générales à visée éducative. Il ne remplace pas un avis médical ni un accompagnement
+    individualisé.</p>
+    <p><a href="/mentions-legales">Mentions légales</a> &nbsp;·&nbsp;
+       <a href="/cgv">CGV</a> &nbsp;·&nbsp;
+       <a href="/confidentialite">Confidentialité</a> &nbsp;·&nbsp;
+       <a href="mailto:contact@pabloxdiscipline.com">Contact</a></p>
+    <p class="tiny" style="margin-top:14px">© PabloXDiscipline</p>
+  </div>
+</footer>
+
+<!-- ==================== BARRE STICKY MOBILE ==================== -->
+<div class="sticky" id="sticky">
+  <div class="lab"><b>Protocole Sèche</b><span>49 pages · accès immédiat</span></div>
+  <a href="#acheter" data-buy>27 € — J'achète</a>
+</div>
+
+<script>
+/* ===================================================================
+   ⚠️  REMPLACE LA LIGNE CI-DESSOUS PAR TON LIEN DE PAIEMENT STRIPE
+   Exemple : const STRIPE_URL = "https://buy.stripe.com/xxxxxxxxxxxx";
+   Tant que la valeur reste vide, les boutons font défiler vers le bloc prix.
+   =================================================================== */
+const STRIPE_URL = "https://buy.stripe.com/5kQ00j2qn0N9f0R1b03F61e";
+
+(function () {
+  if (STRIPE_URL) {
+    document.querySelectorAll('[data-buy]').forEach(function (a) {
+      a.setAttribute('href', STRIPE_URL);
+      a.setAttribute('rel', 'noopener');
+    });
+  }
+  // barre sticky : apparaît après le premier écran, disparaît sur le bloc prix
+  var bar = document.getElementById('sticky');
+  var buy = document.getElementById('acheter');
+  window.addEventListener('scroll', function () {
+    var past = window.scrollY > window.innerHeight * 0.9;
+    var atBuy = buy.getBoundingClientRect().top < window.innerHeight &&
+                buy.getBoundingClientRect().bottom > 0;
+    bar.classList.toggle('on', past && !atBuy);
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
