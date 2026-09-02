@@ -103,6 +103,18 @@ footer a{color:var(--gris);text-decoration:none;font-size:12px}
 <!-- ================= FORMULAIRE ================= -->
 <section>
   <div class="wrap">
+    <div class="card" style="border-color:#3A2C10;background:linear-gradient(150deg,#221A08 0%,#17191E 78%);margin-bottom:16px">
+      <div class="kicker" style="color:#D8A93A">Avant de calculer</div>
+      <p class="small" style="margin-top:9px;color:var(--gris2)">Cet outil s'adresse à des
+      <strong style="color:var(--blanc)">adultes en bonne santé</strong>. Il donne une estimation
+      générale, pas une recommandation personnalisée.</p>
+      <p class="small" style="margin-top:10px;color:var(--gris2)">
+      <strong style="color:var(--blanc)">Ne l'utilise pas</strong> si tu as moins de 18 ans, si tu
+      es enceinte ou allaitante, si tu suis un traitement ou souffres d'une pathologie, ou si tu as
+      un antécédent de trouble du comportement alimentaire. Dans ces situations, un professionnel
+      de santé est la seule bonne adresse.</p>
+    </div>
+
     <div class="card">
       <div style="margin-bottom:18px">
         <label>Sexe</label>
@@ -130,13 +142,15 @@ footer a{color:var(--gris);text-decoration:none;font-size:12px}
       <div>
         <label for="act">Niveau d'activité</label>
         <select id="act">
-          <option value="1.2">Sédentaire — aucun entraînement</option>
-          <option value="1.375">Léger — 1 à 3 séances par semaine</option>
-          <option value="1.55" selected>Modéré — 3 à 5 séances par semaine</option>
-          <option value="1.725">Intense — 6 séances ou métier physique</option>
+          <option value="1.2">Bureau · moins de 5 000 pas · 0 à 1 séance</option>
+          <option value="1.375">Bureau · 5 000 à 8 000 pas · 2 à 3 séances</option>
+          <option value="1.55" selected>Actif · 8 000 à 12 000 pas · 3 à 5 séances</option>
+          <option value="1.725">Très actif ou métier physique · 12 000 pas et + · 5 séances et +</option>
         </select>
-        <p class="tiny" style="margin-top:9px">Dans le doute, prends la ligne du dessus.
-        La plupart des gens se surestiment.</p>
+        <p class="tiny" style="margin-top:9px"><strong style="color:var(--gris2)">Compte tes pas,
+        pas seulement tes séances.</strong> C'est ce qui fait le plus d'écart entre deux
+        personnes. Si tu hésites entre deux lignes, prends celle du dessus : la plupart des gens
+        surestiment leur activité.</p>
       </div>
     </div>
   </div>
@@ -147,9 +161,18 @@ footer a{color:var(--gris);text-decoration:none;font-size:12px}
   <div class="wrap">
 
     <div class="hero-res">
-      <span class="kicker">Ta cible pour sécher</span>
+      <span class="kicker">Ton estimation de départ</span>
       <div class="bignum" style="margin-top:8px"><span id="cible">—</span><small> kcal</small></div>
-      <p class="small" style="margin-top:4px">par jour · déficit de 18 %</p>
+      <p class="small" style="margin-top:4px" id="soustitre">par jour · déficit de 18 %</p>
+      <div id="plancher" style="display:none;margin-top:16px;text-align:left;
+        border:1px solid #3A2C10;background:#221A08;border-radius:11px;padding:14px 16px">
+        <div class="kicker" style="color:#D8A93A">Plancher de sécurité appliqué</div>
+        <p class="small" style="margin-top:7px;color:var(--gris2)">Le calcul brut tombait sous
+        le seuil que je considère comme raisonnable sur la durée. <strong>La cible affichée a été
+        relevée.</strong> Descendre plus bas te ferait perdre du muscle, de l'énergie et du
+        sommeil pour un gain de vitesse minime. Si tu ne perds rien à ce niveau, la réponse est
+        d'augmenter ta dépense, pas de couper davantage.</p>
+      </div>
       <div class="macros">
         <div class="m"><div class="v" id="prot">—</div><div class="l">g protéines</div></div>
         <div class="m"><div class="v" id="gluc">—</div><div class="l">g glucides</div></div>
@@ -250,6 +273,14 @@ footer a{color:var(--gris);text-decoration:none;font-size:12px}
     var maint = mb * f;
     var cible = maint * 0.82;
 
+    // plancher de securite : jamais de recommandation sous ces seuils
+    var plancher = (sexe === 'h') ? 1500 : 1200;
+    var sousPlancher = false;
+    if (cible < plancher) { cible = plancher; sousPlancher = true; }
+    document.getElementById('plancher').style.display = sousPlancher ? 'block' : 'none';
+    document.getElementById('soustitre').textContent =
+      sousPlancher ? 'par jour · plancher de sécurité' : 'par jour · déficit de 18 %';
+
     var prot = p * 2;              // 2 g/kg
     var lip  = p * 0.9;            // 0,9 g/kg
     var gluc = (cible - prot * 4 - lip * 9) / 4;
@@ -261,7 +292,8 @@ footer a{color:var(--gris);text-decoration:none;font-size:12px}
     $('gluc').textContent   = nb(gluc);
     $('mb').textContent     = nb(mb);
     $('maint').textContent  = nb(maint);
-    $('fourch').textContent = nb(maint * 0.80) + ' à ' + nb(maint * 0.85) + ' kcal';
+    $('fourch').textContent = nb(Math.max(maint * 0.80, plancher)) + ' à '
+                            + nb(Math.max(maint * 0.85, plancher)) + ' kcal';
     $('perte').textContent  = nb(p * 5) + ' à ' + nb(p * 10) + ' g';
     $('protkg').textContent = nb(p * 1.8) + ' à ' + nb(p * 2.2) + ' g';
 
