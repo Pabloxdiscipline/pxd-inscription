@@ -39,11 +39,11 @@ p{font-size:16px;line-height:1.65}.lede{font-size:clamp(17px,4.4vw,21px);line-he
 strong{font-weight:600;color:var(--blanc)}
 
 /* ---------- HERO ---------- */.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;
-  justify-content:flex-end;padding:0;overflow:hidden}.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}.hero.veil{position:absolute;inset:0;background:
-  linear-gradient(to bottom,rgba(9,9,11,.72) 0%,rgba(9,9,11,.30) 30%,rgba(9,9,11,.86) 72%,#09090B 100%)}.hero.top{position:absolute;top:0;left:0;right:0;padding:22px var(--pad) 0;z-index:2}.hero.inner{position:relative;z-index:2;padding:0 var(--pad) 52px}.hero h1{margin-top:16px}.hero.scroll{margin-top:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gris);font-weight:600;display:flex;align-items:center;gap:9px}.hero.scroll:after{content:"";width:1px;height:22px;background:var(--rouge);display:block}
+  justify-content:flex-end;padding:0;overflow:hidden}.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}.hero .veil{position:absolute;inset:0;background:
+  linear-gradient(to bottom,rgba(9,9,11,.72) 0%,rgba(9,9,11,.30) 30%,rgba(9,9,11,.86) 72%,#09090B 100%)}.hero .top{position:absolute;top:0;left:0;right:0;padding:22px var(--pad) 0;z-index:2}.hero .inner{position:relative;z-index:2;padding:0 var(--pad) 52px}.hero h1{margin-top:16px}.hero .scroll{margin-top:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gris);font-weight:600;display:flex;align-items:center;gap:9px}.hero .scroll:after{content:"";width:1px;height:22px;background:var(--rouge);display:block}
 
-/* ---------- MIROIR ---------- */.mirror p{font-size:clamp(17px,4.6vw,22px);line-height:1.45;color:var(--blanc);font-weight:300}.mirror p+p{margin-top:22px}.mirror.last{color:var(--gris)}
+/* ---------- MIROIR ---------- */.mirror p{font-size:clamp(17px,4.6vw,22px);line-height:1.45;color:var(--blanc);font-weight:300}.mirror p+p{margin-top:22px}.mirror .last{color:var(--gris)}
 
 /* ---------- TURN ---------- */.turn{background:var(--anthra);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
@@ -53,7 +53,7 @@ strong{font-weight:600;color:var(--blanc)}
 }
 
 /* ---------- SPECS ---------- */.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(min-width:560px){.specs{grid-template-columns:repeat(4,1fr)}}.spec{background:var(--anthra);border:1px solid var(--line);border-radius:11px;padding:15px 10px;text-align:center}.spec.v{font-family:'Bebas',sans-serif;font-size:30px;color:var(--rouge);line-height:1}.spec.l{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+@media(min-width:560px){.specs{grid-template-columns:repeat(4,1fr)}}.spec{background:var(--anthra);border:1px solid var(--line);border-radius:11px;padding:15px 10px;text-align:center}.spec .v{font-family:'Bebas',sans-serif;font-size:30px;color:var(--rouge);line-height:1}.spec .l{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
   color:var(--gris);margin-top:6px}
 
 /* ---------- CAROUSEL PAGES ---------- */.rail{display:flex;gap:12px;overflow-x:auto;padding:4px 0 14px;
@@ -62,9 +62,9 @@ strong{font-weight:600;color:var(--blanc)}
   padding-left:var(--pad);padding-right:var(--pad);scrollbar-width:none}.rail::-webkit-scrollbar{display:none}.rail>*{flex:0 0 auto;scroll-snap-align:center}.rail img{width:198px;border-radius:9px;border:1px solid var(--line)}
 
 /* ---------- RECETTES ---------- */.recgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-@media(min-width:760px){.recgrid{grid-template-columns:repeat(3,1fr)}}.rec{position:relative;border-radius:11px;overflow:hidden;aspect-ratio:3/4;background:#000}.rec img{width:100%;height:100%;object-fit:cover}.rec.tag{position:absolute;left:9px;bottom:9px;background:rgba(9,9,11,.82);
+@media(min-width:760px){.recgrid{grid-template-columns:repeat(3,1fr)}}.rec{position:relative;border-radius:11px;overflow:hidden;aspect-ratio:3/4;background:#000}.rec img{width:100%;height:100%;object-fit:cover}.rec .tag{position:absolute;left:9px;bottom:9px;background:rgba(9,9,11,.82);
   backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.12);border-radius:7px;
-  padding:5px 9px;font-size:10px;font-weight:800;letter-spacing:.09em;color:#fff}.rec.tag b{color:var(--rouge)}.rec.lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  padding:5px 9px;font-size:10px;font-weight:800;letter-spacing:.09em;color:#fff}.rec .tag b{color:var(--rouge)}.rec .lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   background:rgba(9,9,11,.62);font-family:'Bebas',sans-serif;font-size:15px;letter-spacing:.1em;
   color:var(--blanc);text-align:center;padding:14px;line-height:1.1}
 
@@ -79,7 +79,7 @@ ul.pxd.no li:before{background:#3A3E46}
 /* ---------- CTA ---------- */.ctabox{text-align:center;padding:8px 0}.btn{display:block;width:100%;max-width:430px;margin:0 auto;background:var(--rouge);color:#fff;
   text-decoration:none;border-radius:100px;padding:19px 22px;font-weight:800;font-size:15px;
   letter-spacing:.08em;text-transform:uppercase;line-height:1.2;
-  box-shadow:0 10px 34px rgba(255,47,56,.28);transition:transform.12s ease}.btn:active{transform:scale(.985)}.btn.u{display:block;font-weight:400;font-size:12px;letter-spacing:.02em;
+  box-shadow:0 10px 34px rgba(255,47,56,.28);transition:transform.12s ease}.btn:active{transform:scale(.985)}.btn .u{display:block;font-weight:400;font-size:12px;letter-spacing:.02em;
   text-transform:none;margin-top:6px;opacity:.94}.rea{margin-top:14px;font-size:12px;color:var(--gris);letter-spacing:.02em}
 
 /* ---------- QUI ---------- */.who{display:grid;gap:24px}
@@ -91,7 +91,7 @@ details.toc summary{padding:17px 20px;cursor:pointer;list-style:none;font-weight
   color:var(--blanc);font-size:15px;display:flex;justify-content:space-between;align-items:center}
 details.toc summary::-webkit-details-marker{display:none}
 details.toc summary:after{content:"+";color:var(--rouge);font-size:20px;font-weight:400}
-details.toc[open] summary:after{content:"–"}.tocbody{padding:0 20px 20px}.tocline{display:flex;gap:13px;padding:11px 0;border-top:1px solid #202329}.tocline.n{font-family:'Bebas',sans-serif;color:var(--rouge);font-size:16px;min-width:22px;line-height:1.3}.tocline.t b{display:block;color:var(--blanc);font-size:14px;font-weight:600}.tocline.t span{font-size:13px;color:var(--gris)}
+details.toc[open] summary:after{content:"–"}.tocbody{padding:0 20px 20px}.tocline{display:flex;gap:13px;padding:11px 0;border-top:1px solid #202329}.tocline .n{font-family:'Bebas',sans-serif;color:var(--rouge);font-size:16px;min-width:22px;line-height:1.3}.tocline .t b{display:block;color:var(--blanc);font-size:14px;font-weight:600}.tocline .t span{font-size:13px;color:var(--gris)}
 
 /* ---------- PRIX ---------- */.price{font-family:'Bebas',sans-serif;font-size:clamp(64px,17vw,110px);color:var(--blanc);line-height:.86}.price small{font-size:.42em;color:var(--rouge)}
 
@@ -102,22 +102,22 @@ details.faq summary{padding:17px 0;cursor:pointer;list-style:none;font-weight:60
 details.faq summary::-webkit-details-marker{display:none}
 details.faq summary:after{content:"+";color:var(--rouge);font-size:19px;font-weight:400;flex:0 0 auto}
 details.faq[open] summary:after{content:"–"}
-details.faq.a{padding:0 0 18px;font-size:14.5px;color:var(--gris2);line-height:1.6}
+details.faq .a{padding:0 0 18px;font-size:14.5px;color:var(--gris2);line-height:1.6}
 
-/* ---------- FINAL ---------- */.final{position:relative;overflow:hidden;padding:0}.final img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.final.veil{position:absolute;inset:0;background:linear-gradient(to bottom,#09090B 0%,rgba(9,9,11,.72) 34%,rgba(9,9,11,.93) 100%)}.final.inner{position:relative;z-index:2;padding:82px var(--pad) 74px;text-align:center}
+/* ---------- FINAL ---------- */.final{position:relative;overflow:hidden;padding:0}.final img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.final .veil{position:absolute;inset:0;background:linear-gradient(to bottom,#09090B 0%,rgba(9,9,11,.72) 34%,rgba(9,9,11,.93) 100%)}.final .inner{position:relative;z-index:2;padding:82px var(--pad) 74px;text-align:center}
 
 footer{border-top:1px solid var(--line);padding:30px 0 44px;text-align:center}
 footer a{color:var(--gris);text-decoration:none;font-size:12px}
 
 /* ---------- BARRE STICKY MOBILE ---------- */.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:11px 14px calc(11px + env(safe-area-inset-bottom));
   background:rgba(9,9,11,.93);backdrop-filter:blur(14px);border-top:1px solid var(--line);
-  display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform.28s ease}.sticky.on{transform:translateY(0)}.sticky.lab{flex:1;min-width:0}.sticky.lab b{display:block;color:var(--blanc);font-size:13px;font-weight:600;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sticky.lab span{font-size:11px;color:var(--gris)}.sticky a{background:var(--rouge);color:#fff;text-decoration:none;border-radius:100px;
+  display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform.28s ease}.sticky.on{transform:translateY(0)}.sticky .lab{flex:1;min-width:0}.sticky .lab b{display:block;color:var(--blanc);font-size:13px;font-weight:600;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sticky .lab span{font-size:11px;color:var(--gris)}.sticky a{background:var(--rouge);color:#fff;text-decoration:none;border-radius:100px;
   padding:13px 20px;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;flex:0 0 auto}
 @media(min-width:900px){.sticky{display:none}}
 @media(max-width:899px){body{padding-bottom:78px}}
 </style>
-<style>.legal{padding:44px 0 70px}.legal h1{font-size:clamp(30px,8vw,48px);margin-bottom:8px}.legal h2{font-size:clamp(20px,5vw,26px);margin:38px 0 12px}.legal p,.legal li{font-size:15px;line-height:1.7;color:var(--gris2)}.legal p+p{margin-top:12px}.legal ul{margin:12px 0 0 18px}.legal li{margin-bottom:8px}.legal.box{background:var(--anthra);border:1px solid var(--line);border-radius:12px;padding:20px;margin-top:16px}.legal a{color:var(--rouge)}.back{display:inline-block;margin-bottom:26px;font-size:13px;color:var(--gris);
+<style>.legal{padding:44px 0 70px}.legal h1{font-size:clamp(30px,8vw,48px);margin-bottom:8px}.legal h2{font-size:clamp(20px,5vw,26px);margin:38px 0 12px}.legal p,.legal li{font-size:15px;line-height:1.7;color:var(--gris2)}.legal p+p{margin-top:12px}.legal ul{margin:12px 0 0 18px}.legal li{margin-bottom:8px}.legal .box{background:var(--anthra);border:1px solid var(--line);border-radius:12px;padding:20px;margin-top:16px}.legal a{color:var(--rouge)}.back{display:inline-block;margin-bottom:26px;font-size:13px;color:var(--gris);
         text-decoration:none;letter-spacing:.04em}.maj{font-size:12px;color:#8E929B;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
   body{padding-bottom:0!important}
 </style>
@@ -150,12 +150,11 @@ bancaire n'est conservée par le Vendeur.</p>
 <p>La commande est définitivement validée après confirmation du paiement.</p>
 
 <h2>Article 5. Livraison</h2>
-<p>Le produit est livré par courrier électronique, à l'adresse indiquée par le Client lors de la commande,
-immédiatement après confirmation du paiement.</p>
-<p>Il appartient au Client de vérifier l'exactitude de l'adresse saisie et de consulter son dossier
-« indésirables ». En cas de non-réception, le Client peut contacter
-<a href="mailto:contact@pabloxdiscipline.com">contact@pabloxdiscipline.com</a> ; un nouveau lien lui sera
-transmis dans les meilleurs délais.</p>
+<p>Immédiatement après confirmation du paiement, le Client est redirigé vers une page de
+téléchargement lui permettant d'accéder au produit sans délai.</p>
+<p>Il appartient au Client de télécharger et de conserver le fichier. En cas de difficulté d'accès,
+le Client peut contacter <a href="mailto:contact@pabloxdiscipline.com">contact@pabloxdiscipline.com</a> ;
+un nouveau lien lui sera transmis dans les meilleurs délais.</p>
 
 <h2>Article 6. Droit de rétractation</h2>
 <div class="box">
